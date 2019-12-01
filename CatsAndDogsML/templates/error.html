@@ -1,0 +1,14 @@
+{% extends "main.html" %}
+
+{% block title %}
+    Error
+{% endblock %}
+
+{% block main %}
+    <div class="row justify-content-center mt-2">
+        <div class="col-9 text-center">
+            <h2>An error occured while processing this file:</h2>
+            <p>{{ image }}</p>
+        </div>
+    </div>
+{% endblock %}

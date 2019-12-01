@@ -1,0 +1,13 @@
+{% extends "main.html" %}
+
+{% block title %}
+    Prediction
+{% endblock %}
+
+{% block main %}
+<div class="row row-cols-1 row-cols-md-3 mt-5">
+    {% for i in range(amount) %}
+        {{ cards[i] | safe }}
+    {% endfor %}
+</div>
+{% endblock %}

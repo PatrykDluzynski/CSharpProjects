@@ -1,0 +1,26 @@
+{% extends "main.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+<div class="row justify-content-center">
+    <div class="col-9 text-center mt-5">
+        <h1>Welcome!</h1>
+        <h2>
+            <p>Don't you wish you could put an end to the age-old question of "is my pet a cat, or a dog?"</p>
+            <p>Worry not! With this website you won't have to bear the crushing weight of uncertainty, whether to buy dog or cat food the next time you go shopping.</p>
+            <p>No more mistakenly training your cat to fetch!</p>
+            <p>No more buying cat trees for your dog!</p>
+            <p>The upsides are almost endless!</p>
+        </h2>
+        <p>The only downside is that this algorithm is ~85% accurate</p>
+        <h3>
+            <p>What's there to lose? Get your prediction now!</p>
+        </h3>
+        <a class="btn btn-primary" href="/predict" role="button">Predict</a>
+    </div>
+</div>
+    
+{% endblock %}
