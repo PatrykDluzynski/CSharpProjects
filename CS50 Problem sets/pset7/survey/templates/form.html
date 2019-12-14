@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    <!-- http://getbootstrap.com/docs/4.1/content/typography/ -->
+    <h1 class="mb-3">Main Interest Form</h1>
+
+    <!-- http://getbootstrap.com/docs/4.1/components/forms/ -->
+    <form action="/form" method="post" class="needs-validation" novalidate>
+
+        <div class="form-row">
+            <div class="col-md-3 mb-3">
+                <label for="Name">Name</label>
+                <input type="text" class="form-control" id="Name" name="Name" placeholder="Name" required>
+                <div class="invalid-feedback">
+                    Please provide your name
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <label for="Email">Email</label>
+                <input type="email" class="form-control" id="Email" name="Email" placeholder="Email" required>
+                <div class="invalid-feedback">
+                    Please provide an email
+                </div>
+            </div>
+        </div>
+        <div class="form-group col-md-6 mb-3">
+            <label for="Select">Select your age group</label>
+            <select class="custom-select" id="Select" name="Select" required>
+                <option value="">Select an age group</option>
+                <option value="0 - 18">0-18</option>
+                <option value="18 - 30">18-30</option>
+                <option value="30 - 50">30-50</option>
+                <option value="50 - 70">50-70</option>
+                <option value="70+">70+</option>
+            </select>
+            <div class="invalid-feedback">
+                Please select your age group
+            </div>
+        </div>
+        <div class="custom-control custom-radio">
+            <input type="radio" class="custom-control-input" id="Radio1" name="Radio" value="Sports" required>
+            <label class="custom-control-label" for="Radio1">Sports</label>
+        </div>
+        <div class="custom-control custom-radio">
+            <input type="radio" class="custom-control-input" id="Radio2" name="Radio" value="Music" required>
+            <label class="custom-control-label" for="Radio2">Music</label>
+        </div>
+        <div class="custom-control custom-radio">
+            <input type="radio" class="custom-control-input" id="Radio3" name="Radio" value="Art" required>
+            <label class="custom-control-label" for="Radio3">Art</label>
+        </div>
+        <div class="custom-control custom-radio mb-3">
+            <input type="radio" class="custom-control-input" id="Radio4" name="Radio" value="Gaming" required>
+            <label class="custom-control-label" for="Radio4">Gaming</label>
+            <div class="invalid-feedback">
+                Please choose your main area of interest
+            </div>
+        </div>
+
+        <!-- http://getbootstrap.com/docs/4.1/components/buttons/ -->
+        <button class="btn btn-primary" type="submit">Submit</button>
+
+    </form>
+
+    <script>
+        (function() {
+          'use strict';
+          window.addEventListener('load', function() {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function(form) {
+              form.addEventListener('submit', function(event) {
+                if (form.checkValidity() === false) {
+                  event.preventDefault();
+                  event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+              }, false);
+            });
+          }, false);
+        })();
+    </script>
+
+{% endblock %}

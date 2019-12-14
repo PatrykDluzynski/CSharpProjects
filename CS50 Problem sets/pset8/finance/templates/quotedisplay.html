@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col align-self-center">
+                <h1>Quote for {{ name }}</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col align-self-center">
+                <h2>{{ price }}</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col align-self-center">
+                <h3>Symbol: {{ symbol }}</h3>
+            </div>
+        </div>
+    </div>
+{% endblock %}

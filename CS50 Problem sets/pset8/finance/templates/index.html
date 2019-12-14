@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped table-bordered">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">Symbol</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Unit Price</th>
+                <th scope="col">Total Price</th>
+            </tr>
+            {% for i in range(rowlength) %}
+                <tr>
+                    <td>{{ rows[i]["symbol"] }}</td>
+                    <td>{{ rows[i]["amount"] }}</td>
+                    <td>{{ rows[i]["unit_price"] }}</td>
+                    <td>{{ rows[i]["total_price"] }}</td>
+                </tr>
+            {% endfor %}
+            <tr>
+                <th scope="row">Cash Balance</th>
+                <td></td>
+                <td></td>
+                <td>{{ currcash }}</td>
+            </tr>
+            <tr>
+                <th scope="row">Total Value</th>
+                <td></td>
+                <td></td>
+                <td>{{ total }}</td>
+            </tr>
+        </thead>
+    </table>
+{% endblock %}

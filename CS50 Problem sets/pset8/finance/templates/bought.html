@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Bought
+{% endblock %}
+
+{% block main %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col align-self-center">
+                <h1>Bought {{ shares }} shares of {{ name }}</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col align-self-center">
+                <h2>At {{ unit_price | usd }} per share</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col align-self-center">
+                <h3>Totalling: {{ price | usd }}</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col align-self-center">
+                <h3>Your Cash balance is now: {{ cash | usd }}</h3>
+            </div>
+        </div>
+    </div>
+{% endblock %}

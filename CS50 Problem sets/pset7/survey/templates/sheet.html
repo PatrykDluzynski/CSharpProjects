@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    <!-- http://getbootstrap.com/docs/4.1/content/typography/ -->
+    <h1 class="mb-3">Main Interest Sheet</h1>
+
+    <table class="table table-striped table-bordered">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Age Group</th>
+                <th scope="col">Interest</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for registered in registered %}
+                <tr>
+                    <td>{{ registered[0] }}</td>
+                    <td>{{ registered[1] }}</td>
+                    <td>{{ registered[2] }}</td>
+                    <td>{{ registered[3] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

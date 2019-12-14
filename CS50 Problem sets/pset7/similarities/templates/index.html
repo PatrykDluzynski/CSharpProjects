@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <div class="col" style="padding: 20px;">
+        <form action="/compare" enctype="multipart/form-data" method="post" class="needs-validation" novalidate>
+            <div class="form-group row">
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="file1" name="file1">
+                    <label class="custom-file-label" for="file1">Choose File 1</label>
+                </div>
+            </div>
+            <script>
+            $('#file1').on('change',function(){
+                //get the file name
+                var fileName = $(this).val().replace('C:\\fakepath\\', " ");
+                //replace the "Choose a file" label
+                $(this).next('.custom-file-label').html(fileName);
+            })
+            </script>
+            <div class="form-group row">
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="file2" name="file2">
+                    <label class="custom-file-label" for="file2">Choose File 2</label>
+                </div>
+            </div>
+            <script>
+            $('#file2').on('change',function(){
+                //get the file name
+                var fileName = $(this).val().replace('C:\\fakepath\\', " ");
+                //replace the "Choose a file" label
+                $(this).next('.custom-file-label').html(fileName);
+            })
+            </script>
+            <script>
+            function disable() {
+                document.getElementById("length").disabled = true;
+            }
+
+            function enable() {
+                document.getElementById("length").disabled = false;
+            }
+            </script>
+            <fieldset class="form-group">
+                <div class="row">
+                  <legend class="col-form-label col-sm-2 pt-0">Algorithm</legend>
+                  <div class="col-sm-10">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="algorithm" id="lineradio" value="lines" onclick="disable()">
+                      <label class="form-check-label" for="lineradio">
+                        Lines
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="algorithm" id="sentenceradio" value="sentences" onclick="disable()">
+                      <label class="form-check-label" for="sentenceradio">
+                        Sentences
+                      </label>
+                    </div>
+                    <div class="form-check disabled">
+                      <input class="form-check-input" type="radio" name="algorithm" id="substringradio" value="substrings" onclick="enable()">
+                      <label class="form-check-label" for="substringradio">
+                        Substrings
+                      </label>
+                    </div>
+                  </div>
+                </div>
+          </fieldset>
+          <div class="form-group row">
+            <label for="length" class="col-sm-2 col-form-label">Length</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" id="length" name="length" min="0" step="1" placeholder="Length" disabled>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Compare files</button>
+        </form>
+    </div>
+
+{% endblock %}
